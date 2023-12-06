@@ -1,10 +1,13 @@
 const storage_ctx = document.getElementById("storage_chart");
 
+const storage_labels = [];
+products_data.forEach(e => {
+  storage_labels.push(e.name)
+});
 const data = {
-  labels: [1, 2, 3, 4, 5],
+  labels: storage_labels,
   datasets: [
     {
-      label: "My First Dataset",
       data: [],
       backgroundColor: [
         "rgba(255, 99, 132, 0.2)",
@@ -37,6 +40,11 @@ const storage_chart = new Chart(storage_ctx, {
   type: "bar",
   data: data,
   options: {
+    plugins: {
+      legend: {
+        display: false
+      }
+    },
     scales: {
       y: {
         beginAtZero: true,
