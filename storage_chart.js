@@ -48,6 +48,7 @@ const storage_chart = new Chart(storage_ctx, {
     scales: {
       y: {
         beginAtZero: true,
+        max: 100,
       },
     },
   },

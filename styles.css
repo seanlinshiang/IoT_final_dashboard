@@ -2,7 +2,7 @@
   margin: 5em auto 5em auto;
 }
 body {
-  background-image: url("./abstract-technology-hi-tech-background-technology-connection-digital-data-and-big-data-concept-iot-background-concept-free-vector.jpg");
+  background-image: url("./background.jpg");
 }
 div.for_container {
   display: flex;
@@ -15,8 +15,9 @@ div.container {
   border-radius: 20px;
   padding: 10px;
   margin: 20px;
-  h1 {
-    text-align: center;
-    font-size: 18px;
-  }
+}
+
+div.container h1 {
+  text-align: center;
+  font-size: 18px;
 }
