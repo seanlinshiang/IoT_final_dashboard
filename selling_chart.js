@@ -1,38 +1,35 @@
-const ctx = document.getElementById("myChart");
+const selling_ctx = document.getElementById("selling_chart");
 
-const data = {
-  datasets: [
-    {
-      label: "First Dataset",
-      data: [
-        {
-          x: 10,
-          y: 20,
-          r: 100,
-        },
-        {
-          x: 40,
-          y: 10,
-          r: 50,
-        },
-      ],
-      backgroundColor: "rgb(255, 255, 255)",
-    },
-  ],
-};
-chart = new Chart(ctx, {
-  type: "bubble",
-  data: data,
-  options: {},
+let selling_datasets = []
+
+products_data.forEach(e => {
+    if (e.sold_num > 0) {
+        selling_datasets.push({
+            label: e.name,
+            data: [{
+                x: e.average_purchase_time,
+                y: e.average_stop_time,
+                r: e.sold_num
+            }],
+        })
+    } else {
+        selling_datasets.push({
+            label: e.name,
+            data: [{
+                x: e.average_purchase_time,
+                y: e.average_stop_time,
+                r: 12
+            }],
+        })
+    }  
 });
 
-count = 0;
-function update() {
-  count++;
-  chart.data.datasets[0].data[0].r = count;
-  chart.data.datasets[0].data[0].y = count * 3;
-  chart.data.datasets[0].data[0].x = count * 2;
-  chart.update();
-}
+const selling_chart_data = {
+  datasets: selling_datasets,
+};
 
-setInterval(update, 1000);
+const selling_chart = new Chart(selling_ctx, {
+  type: "bubble",
+  data: selling_chart_data,
+  options: {},
+});
