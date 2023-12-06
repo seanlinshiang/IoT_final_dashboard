@@ -1,8 +1,42 @@
 let products_data = [
   {
     name: "coke",
+    storage: 0.7,
+    average_stop_time: 20,
+    average_perchase_time: 25,
+    accum_stop_time: 100,
+    sold_num: 14,
   },
   {
     name: "candy",
+    storage: 0.9,
+    average_stop_time: 4,
+    average_perchase_time: 10,
+    accum_stop_time: 45,
+    sold_num: 5,
+  },
+  {
+    name: "cake",
+    storage: 1.0,
+    average_stop_time: 22,
+    average_perchase_time: 40,
+    accum_stop_time: 77,
+    sold_num: 0,
+  },
+  {
+    name: "chocolate",
+    storage: 0.0,
+    average_stop_time: 1,
+    average_perchase_time: 3,
+    accum_stop_time: 30,
+    sold_num: 22,
+  },
+  {
+    name: "chips",
+    storage: 0.55,
+    average_stop_time: 18,
+    average_perchase_time: 24,
+    accum_stop_time: 44,
+    sold_num: 40,
   },
 ];
