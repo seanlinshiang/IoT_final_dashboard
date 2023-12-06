@@ -3,6 +3,6 @@ let products_data = [
     name: "coke",
   },
   {
-    name: "sprite",
+    name: "candy",
   },
 ];
