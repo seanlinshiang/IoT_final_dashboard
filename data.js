@@ -1,11 +1,11 @@
 let products_data = [
   {
     name: "coke",
-    storage: 70,
-    average_stop_time: 20,
-    average_purchase_time: 25,
-    accum_stop_time: 100,
-    sold_num: 14,
+    storage: 0,
+    average_stop_time: 0,
+    average_purchase_time: 0,
+    accum_stop_time: 0,
+    sold_num: 0,
   },
   {
     name: "candy",
@@ -29,7 +29,7 @@ let products_data = [
     average_stop_time: 1,
     average_purchase_time: 3,
     accum_stop_time: 30,
-    sold_num: 22,
+    sold_num: 6,
   },
   {
     name: "chips",
@@ -37,6 +37,6 @@ let products_data = [
     average_stop_time: 18,
     average_purchase_time: 24,
     accum_stop_time: 44,
-    sold_num: 40,
+    sold_num: 16,
   },
 ];
