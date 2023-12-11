@@ -19,7 +19,7 @@ let products_data = [
     name: "cake",
     storage: 100,
     average_stop_time: 22,
-    average_purchase_time: 40,
+    average_purchase_time: 14,
     accum_stop_time: 77,
     sold_num: 0,
   },
@@ -34,7 +34,7 @@ let products_data = [
   {
     name: "chips",
     storage: 55,
-    average_stop_time: 18,
+    average_stop_time: 15,
     average_purchase_time: 24,
     accum_stop_time: 44,
     sold_num: 16,
