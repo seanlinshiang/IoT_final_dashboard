@@ -1,8 +1,15 @@
 const selling_ctx = document.getElementById("selling_chart");
 
 let selling_datasets = [];
+let backgroundColor = [
+  "rgba(255, 99, 132, 0.5)",
+  "rgba(255, 159, 64, 0.5)",
+  "rgba(255, 205, 86, 0.5)",
+  "rgba(75, 192, 192, 0.5)",
+  "rgba(54, 162, 235, 0.5)",
+];
 
-products_data.forEach((e) => {
+products_data.forEach((e, i) => {
   if (e.sold_num > 0) {
     selling_datasets.push({
       label: e.name,
@@ -13,6 +20,7 @@ products_data.forEach((e) => {
           r: e.sold_num,
         },
       ],
+      backgroundColor: [backgroundColor[i]],
     });
   } else {
     selling_datasets.push({
@@ -28,8 +36,46 @@ products_data.forEach((e) => {
   }
 });
 
+// const stop_chart_data = {
+//     labels: stop_labels,
+//     datasets: [
+//       {
+//         data: stop_data,
+//         backgroundColor: [
+//           "rgba(255, 99, 132, 0.2)",
+//           "rgba(255, 159, 64, 0.2)",
+//           "rgba(255, 205, 86, 0.2)",
+//           "rgba(75, 192, 192, 0.2)",
+//           "rgba(54, 162, 235, 0.2)",
+//         ],
+//         borderColor: [
+//           "rgb(255, 99, 132)",
+//           "rgb(255, 159, 64)",
+//           "rgb(255, 205, 86)",
+//           "rgb(75, 192, 192)",
+//           "rgb(54, 162, 235)",
+//         ],
+//         borderWidth: 1,
+//       },
+//     ],
+//   };
+
 const selling_chart_data = {
   datasets: selling_datasets,
+  //   backgroundColor: [
+  //     "rgba(255, 99, 132, 0.2)",
+  //     "rgba(255, 159, 64, 0.2)",
+  //     "rgba(255, 205, 86, 0.2)",
+  //     "rgba(75, 192, 192, 0.2)",
+  //     "rgba(54, 162, 235, 0.2)",
+  //   ],
+  //   borderColor: [
+  //     "rgb(255, 99, 132)",
+  //     "rgb(255, 159, 64)",
+  //     "rgb(255, 205, 86)",
+  //     "rgb(75, 192, 192)",
+  //     "rgb(54, 162, 235)",
+  //   ],
 };
 
 const selling_chart = new Chart(selling_ctx, {
