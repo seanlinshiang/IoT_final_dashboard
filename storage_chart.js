@@ -1,9 +1,11 @@
 const storage_ctx = document.getElementById("storage_chart");
 
 const storage_labels = [];
-products_data.forEach(e => {
-  storage_labels.push(e.name)
+
+products_data.forEach((e) => {
+  storage_labels.push(e.name);
 });
+
 const data = {
   labels: storage_labels,
   datasets: [
@@ -42,8 +44,8 @@ const storage_chart = new Chart(storage_ctx, {
   options: {
     plugins: {
       legend: {
-        display: false
-      }
+        display: false,
+      },
     },
     scales: {
       y: {
@@ -53,3 +55,11 @@ const storage_chart = new Chart(storage_ctx, {
     },
   },
 });
+
+// update storage_chart
+function get_storage() {
+  data.datasets[0].data[0] = products_data[0].storage;
+  storage_chart.update();
+}
+
+setInterval(get_storage, 1000);
