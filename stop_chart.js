@@ -7,25 +7,32 @@ products_data.forEach((e) => {
   stop_data.push(e.average_stop_time);
 });
 
+// 建立包含標籤、資料、背景顏色和邊框顏色的物件陣列
+const stopDataObjects = stop_labels.map((label, index) => ({
+  label,
+  data: stop_data[index],
+  backgroundColor: backgroundColors[index],
+  borderColor: borderColors[index],
+}));
+
+// 依照資料大小對物件陣列進行排序
+stopDataObjects.sort((a, b) => a.data - b.data);
+
+// 從排序後的物件陣列中分離資料、標籤、背景顏色和邊框顏色
+const sortedStopData = stopDataObjects.map((item) => item.data);
+const sortedStopLabels = stopDataObjects.map((item) => item.label);
+const sortedStopBackgroundColors = stopDataObjects.map(
+  (item) => item.backgroundColor
+);
+const sortedStopBorderColors = stopDataObjects.map((item) => item.borderColor);
+
 const stop_chart_data = {
-  labels: stop_labels,
+  labels: sortedStopLabels,
   datasets: [
     {
-      data: stop_data,
-      backgroundColor: [
-        "rgba(255, 99, 132, 0.5)",
-        "rgba(255, 159, 64, 0.5)",
-        "rgba(255, 205, 86, 0.5)",
-        "rgba(75, 192, 192, 0.5)",
-        "rgba(54, 162, 235, 0.5)",
-      ],
-      borderColor: [
-        "rgb(255, 99, 132)",
-        "rgb(255, 159, 64)",
-        "rgb(255, 205, 86)",
-        "rgb(75, 192, 192)",
-        "rgb(54, 162, 235)",
-      ],
+      data: sortedStopData,
+      backgroundColor: sortedStopBackgroundColors,
+      borderColor: sortedStopBorderColors,
       borderWidth: 1,
     },
   ],

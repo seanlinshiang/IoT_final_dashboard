@@ -1,3 +1,14 @@
+// 創建一個新的 Date 物件
+var now = new Date();
+
+// 取得當下的年、月、日、時、分、秒
+var year = now.getFullYear(); // 年份
+var month = now.getMonth() + 1; // 月份 (從 0 開始，所以要加 1)
+var day = now.getDate(); // 日
+var hours = now.getHours(); // 小時
+var minutes = now.getMinutes(); // 分鐘
+var seconds = now.getSeconds(); // 秒
+
 var requestOptions = {
   method: "GET",
   mode: "cors",
@@ -23,3 +34,21 @@ function get_data() {
 }
 
 setInterval(get_data, 1000);
+
+function get_coke_data() {
+  clock = `~${hours}點${minutes}分`;
+  coke_sold_data.time.push(clock);
+  if (coke_sold_data.sold == []) {
+    coke_sold_data.sold.push(products_data[0].sold_num);
+  } else {
+    let tmp = 0;
+    for (let i = 0; i < coke_sold_data.sold.length; i++) {
+      tmp = tmp + coke_sold_data.sold[i];
+    }
+    coke_sold_data.sold.push(products_data[0].sold_num - tmp);
+  }
+  console.log(coke_sold_data.time);
+  console.log(coke_sold_data.sold);
+}
+
+setInterval(get_coke_data, 10000);

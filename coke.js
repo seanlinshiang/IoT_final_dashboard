@@ -1,16 +1,13 @@
-const storage_ctx = document.getElementById("storage_chart");
+const coke_ctx = document.getElementById("coke_chart");
 
-const storage_labels = [];
+const coke_labels = coke_sold_data.time;
+const coke_sold_num = coke_sold_data.sold;
 
-products_data.forEach((e) => {
-  storage_labels.push(e.name);
-});
-
-const storage_data = {
-  labels: storage_labels,
+const coke_data = {
+  labels: coke_labels,
   datasets: [
     {
-      data: [],
+      data: coke_sold_num,
       backgroundColor: [
         "rgba(255, 99, 132, 0.5)",
         "rgba(255, 159, 64, 0.5)",
@@ -30,13 +27,9 @@ const storage_data = {
   ],
 };
 
-for (let i = 0; i <= 4; i++) {
-  storage_data.datasets[0].data.push(products_data[i].storage);
-}
-
-const storage_chart = new Chart(storage_ctx, {
+const coke_chart = new Chart(coke_ctx, {
   type: "bar",
-  data: storage_data,
+  data: coke_data,
   options: {
     plugins: {
       legend: {
@@ -46,16 +39,15 @@ const storage_chart = new Chart(storage_ctx, {
     scales: {
       y: {
         beginAtZero: true,
-        max: 100,
+        max: 10,
       },
     },
   },
 });
 
-// update storage_chart
-function get_storage() {
-  storage_data.datasets[0].data[0] = products_data[0].storage;
-  storage_chart.update();
+// update coke_chart
+function get_coke() {
+  coke_chart.update();
 }
 
-setInterval(get_storage, 1000);
+setInterval(get_coke, 5000);

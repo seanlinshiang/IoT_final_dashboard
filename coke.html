@@ -33,11 +33,11 @@
                 商品報表
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="coke.html">可樂</a>
-                <a class="dropdown-item" href="#">軟糖</a>
-                <a class="dropdown-item" href="#">蛋糕</a>
-                <a class="dropdown-item" href="#">巧克力</a>
-                <a class="dropdown-item" href="#">洋芋片</a>
+                <a class="dropdown-item" href="coke.html">Coke</a>
+                <a class="dropdown-item" href="#">Candy</a>
+                <a class="dropdown-item" href="#">Cake</a>
+                <a class="dropdown-item" href="#">Chocolate</a>
+                <a class="dropdown-item" href="#">Chips</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">總表</a>
               </div>
@@ -45,30 +45,8 @@
           </ul>
         </div>
       </nav>
-      <div class="for_container">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-              <canvas id="storage_chart"></canvas>
-              <h1>存貨量(%)</h1>
-            </div>
-            <div class="col">
-              <canvas id="stop_chart"></canvas>
-              <h1>平均停滯時間(秒)</h1>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <canvas id="purchase_chart"></canvas>
-              <h1>平均考慮購買時間(秒)</h1>
-            </div>
-            <div class="col">
-              <canvas id="selling_chart"></canvas>
-              <h1>銷售分析(停滯時間/購買時間)</h1>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="coke">
+      <canvas id="coke_chart"></canvas>
     </div>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
