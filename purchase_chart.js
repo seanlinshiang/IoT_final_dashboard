@@ -22,38 +22,43 @@ const borderColors = [
   "rgb(54, 162, 235)",
 ];
 
-// 建立包含標籤、資料、背景顏色和邊框顏色的物件陣列
-const purchaseDataObjects = purchase_labels.map((label, index) => ({
-  label,
-  data: purchase_data[index],
-  backgroundColor: backgroundColors[index],
-  borderColor: borderColors[index],
-}));
+// // 建立包含標籤、資料、背景顏色和邊框顏色的物件陣列
+// const purchaseDataObjects = purchase_labels.map((label, index) => ({
+//   label,
+//   data: purchase_data[index],
+//   backgroundColor: backgroundColors[index],
+//   borderColor: borderColors[index],
+// }));
 
-// 依照資料大小對物件陣列進行排序
-purchaseDataObjects.sort((a, b) => a.data - b.data);
+// // 依照資料大小對物件陣列進行排序
+// purchaseDataObjects.sort((a, b) => a.data - b.data);
 
-// 從排序後的物件陣列中分離資料、標籤、背景顏色和邊框顏色
-const sortedPurchaseData = purchaseDataObjects.map((item) => item.data);
-const sortedPurchaseLabels = purchaseDataObjects.map((item) => item.label);
-const sortedPurchaseBackgroundColors = purchaseDataObjects.map(
-  (item) => item.backgroundColor
-);
-const sortedPurchaseBorderColors = purchaseDataObjects.map(
-  (item) => item.borderColor
-);
+// // 從排序後的物件陣列中分離資料、標籤、背景顏色和邊框顏色
+// const sortedPurchaseData = purchaseDataObjects.map((item) => item.data);
+// const sortedPurchaseLabels = purchaseDataObjects.map((item) => item.label);
+// const sortedPurchaseBackgroundColors = purchaseDataObjects.map(
+//   (item) => item.backgroundColor
+// );
+// const sortedPurchaseBorderColors = purchaseDataObjects.map(
+//   (item) => item.borderColor
+// );
 
 const purchase_chart_data = {
-  labels: sortedPurchaseLabels,
+  labels: purchase_labels,
   datasets: [
     {
-      data: sortedPurchaseData,
-      backgroundColor: sortedPurchaseBackgroundColors,
-      borderColor: sortedPurchaseBorderColors,
+      data: purchase_data,
+      backgroundColor: backgroundColors,
+      borderColor: borderColors,
       borderWidth: 1,
     },
   ],
 };
+
+function sort_purchase_data() {
+  purchase_data.sort();
+  purchase_chart_data.labels;
+}
 
 const purchase_config = {
   type: "bar",

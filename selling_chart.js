@@ -64,6 +64,7 @@ const selling_chart = new Chart(selling_ctx, {
 // console.log(selling_datasets);
 // console.log(selling_datasets[0].data[0]);
 // update selling_chart
+
 function get_selling() {
   selling_datasets[0].data[0].x = products_data[0].average_purchase_time;
   selling_datasets[0].data[0].y = products_data[0].average_stop_time;

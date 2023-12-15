@@ -2,10 +2,10 @@ let products_data = [
   {
     name: "可樂",
     storage: 100,
-    average_stop_time: 15,
-    average_purchase_time: 15,
-    accum_stop_time: 15,
-    sold_num: 15,
+    average_stop_time: 0,
+    average_purchase_time: 0,
+    accum_stop_time: 0,
+    sold_num: 0,
   },
   {
     name: "軟糖",
@@ -43,5 +43,5 @@ let products_data = [
 
 let coke_sold_data = {
   time: [],
-  sold: [],
+  sold_num: [],
 };

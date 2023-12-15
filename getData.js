@@ -18,8 +18,9 @@ var requestOptions = {
   //     "Access-Control-Allow-Methods": "GET",
   //   },
 };
+
 function get_data() {
-  fetch("http://172.20.10.7:5000/get_data", requestOptions)
+  fetch("http://192.168.50.158:5000/get_data", requestOptions)
     .then((response) => response.json())
     .then((result) => {
       console.log(result);
@@ -36,19 +37,18 @@ function get_data() {
 setInterval(get_data, 1000);
 
 function get_coke_data() {
-  clock = `~${hours}點${minutes}分`;
-  coke_sold_data.time.push(clock);
-  if (coke_sold_data.sold == []) {
-    coke_sold_data.sold.push(products_data[0].sold_num);
-  } else {
-    let tmp = 0;
-    for (let i = 0; i < coke_sold_data.sold.length; i++) {
-      tmp = tmp + coke_sold_data.sold[i];
-    }
-    coke_sold_data.sold.push(products_data[0].sold_num - tmp);
-  }
-  console.log(coke_sold_data.time);
-  console.log(coke_sold_data.sold);
+  fetch("http://192.168.50.158:5000/get_history", requestOptions)
+    .then((response) => response.json())
+    .then((result) => {
+      console.log(result);
+      coke_sold_data.time = Object.keys(result.purchase_history);
+      coke_sold_data.sold_num = Object.values(result.purchase_history);
+      console.log("coke_sold_data", coke_sold_data);
+      get_coke();
+    });
 }
 
-setInterval(get_coke_data, 10000);
+setInterval(get_coke_data, 5000);
+
+get_coke_data();
+get_data();

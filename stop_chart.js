@@ -7,32 +7,32 @@ products_data.forEach((e) => {
   stop_data.push(e.average_stop_time);
 });
 
-// 建立包含標籤、資料、背景顏色和邊框顏色的物件陣列
-const stopDataObjects = stop_labels.map((label, index) => ({
-  label,
-  data: stop_data[index],
-  backgroundColor: backgroundColors[index],
-  borderColor: borderColors[index],
-}));
+// // 建立包含標籤、資料、背景顏色和邊框顏色的物件陣列
+// const stopDataObjects = stop_labels.map((label, index) => ({
+//   label,
+//   data: stop_data[index],
+//   backgroundColor: backgroundColors[index],
+//   borderColor: borderColors[index],
+// }));
 
-// 依照資料大小對物件陣列進行排序
-stopDataObjects.sort((a, b) => a.data - b.data);
+// // 依照資料大小對物件陣列進行排序
+// stopDataObjects.sort((a, b) => a.data - b.data);
 
-// 從排序後的物件陣列中分離資料、標籤、背景顏色和邊框顏色
-const sortedStopData = stopDataObjects.map((item) => item.data);
-const sortedStopLabels = stopDataObjects.map((item) => item.label);
-const sortedStopBackgroundColors = stopDataObjects.map(
-  (item) => item.backgroundColor
-);
-const sortedStopBorderColors = stopDataObjects.map((item) => item.borderColor);
+// // 從排序後的物件陣列中分離資料、標籤、背景顏色和邊框顏色
+// const sortedStopData = stopDataObjects.map((item) => item.data);
+// const sortedStopLabels = stopDataObjects.map((item) => item.label);
+// const sortedStopBackgroundColors = stopDataObjects.map(
+//   (item) => item.backgroundColor
+// );
+// const sortedStopBorderColors = stopDataObjects.map((item) => item.borderColor);
 
 const stop_chart_data = {
-  labels: sortedStopLabels,
+  labels: stop_labels,
   datasets: [
     {
-      data: sortedStopData,
-      backgroundColor: sortedStopBackgroundColors,
-      borderColor: sortedStopBorderColors,
+      data: stop_data,
+      backgroundColor: backgroundColors,
+      borderColor: borderColors,
       borderWidth: 1,
     },
   ],
