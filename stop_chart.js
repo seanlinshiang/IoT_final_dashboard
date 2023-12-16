@@ -42,6 +42,18 @@ const stop_config = {
   type: "bar",
   data: stop_chart_data,
   options: {
+    scales: {
+      x: {
+        grid: {
+          color: "rgba(0, 0, 0, 0.2)",
+        },
+      },
+      y: {
+        grid: {
+          color: "rgba(0, 0, 0, 0.2)",
+        },
+      },
+    },
     plugins: {
       legend: {
         display: false,

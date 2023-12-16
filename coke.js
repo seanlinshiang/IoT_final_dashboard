@@ -25,6 +25,28 @@ const coke_chart = new Chart(coke_ctx, {
       y: {
         beginAtZero: true,
         max: 50,
+        title: {
+          display: true,
+          text: "Sales Quantity",
+          align: "center",
+          font: {
+            size: 20,
+            weight: "bold",
+            lineHeight: 1.2,
+          },
+        },
+      },
+      x: {
+        title: {
+          display: true,
+          text: "Time (Sec.)",
+          align: "end",
+          font: {
+            size: 20,
+            weight: "bold",
+            lineHeight: 1.2,
+          },
+        },
       },
     },
   },

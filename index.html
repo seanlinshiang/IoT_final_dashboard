@@ -16,7 +16,10 @@
   <body>
     <div>
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="index.html">智慧倉儲管理</a>
+        <i class="icon"></i>
+        <a class="navbar-brand" href="index.html"
+          >SmartMart Inventory Insights Dashboard</a
+        >
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
@@ -30,16 +33,16 @@
                 aria-haspopup="true"
                 aria-expanded="false"
               >
-                商品報表
+                Product Report
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="coke.html">可樂</a>
-                <a class="dropdown-item" href="#">軟糖</a>
-                <a class="dropdown-item" href="#">蛋糕</a>
-                <a class="dropdown-item" href="#">巧克力</a>
-                <a class="dropdown-item" href="#">洋芋片</a>
+                <a class="dropdown-item" href="coke.html">Cola</a>
+                <a class="dropdown-item" href="#">Candy</a>
+                <a class="dropdown-item" href="#">Cake</a>
+                <a class="dropdown-item" href="#">Chocolate</a>
+                <a class="dropdown-item" href="#">Chips</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">總表</a>
+                <a class="dropdown-item" href="#">Summary</a>
               </div>
             </li>
           </ul>
@@ -50,21 +53,21 @@
           <div class="row">
             <div class="col">
               <canvas id="storage_chart"></canvas>
-              <h1>存貨量(%)</h1>
+              <h1>Stock Level (%)</h1>
             </div>
             <div class="col">
               <canvas id="stop_chart"></canvas>
-              <h1>平均停滯時間(秒)</h1>
+              <h1>Average Dwell Time (sec.)</h1>
             </div>
           </div>
           <div class="row">
             <div class="col">
               <canvas id="purchase_chart"></canvas>
-              <h1>平均考慮購買時間(秒)</h1>
+              <h1>Average Consideration Time (Sec.)</h1>
             </div>
             <div class="col">
               <canvas id="selling_chart"></canvas>
-              <h1>銷售分析(停滯時間/購買時間)</h1>
+              <h1>Sales Analysis</h1>
             </div>
           </div>
         </div>

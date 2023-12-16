@@ -1,13 +1,6 @@
 const selling_ctx = document.getElementById("selling_chart");
 
 let selling_datasets = [];
-let backgroundColor = [
-  "rgba(255, 99, 132, 0.5)",
-  "rgba(255, 159, 64, 0.5)",
-  "rgba(255, 205, 86, 0.5)",
-  "rgba(75, 192, 192, 0.5)",
-  "rgba(54, 162, 235, 0.5)",
-];
 
 products_data.forEach((e, i) => {
   if (e.sold_num > 0) {
@@ -20,7 +13,8 @@ products_data.forEach((e, i) => {
           r: e.sold_num,
         },
       ],
-      backgroundColor: [backgroundColor[i]],
+      backgroundColor: [backgroundColors[i]],
+      borderColor: [borderColors[i]],
     });
   } else {
     selling_datasets.push({
@@ -32,33 +26,47 @@ products_data.forEach((e, i) => {
           r: 12,
         },
       ],
-      backgroundColor: [backgroundColor[i]],
+      backgroundColor: [backgroundColors[i]],
+      borderColor: [borderColors[i]],
     });
   }
 });
 
 const selling_chart_data = {
   datasets: selling_datasets,
-  //   backgroundColor: [
-  //     "rgba(255, 99, 132, 0.2)",
-  //     "rgba(255, 159, 64, 0.2)",
-  //     "rgba(255, 205, 86, 0.2)",
-  //     "rgba(75, 192, 192, 0.2)",
-  //     "rgba(54, 162, 235, 0.2)",
-  //   ],
-  //   borderColor: [
-  //     "rgb(255, 99, 132)",
-  //     "rgb(255, 159, 64)",
-  //     "rgb(255, 205, 86)",
-  //     "rgb(75, 192, 192)",
-  //     "rgb(54, 162, 235)",
-  //   ],
 };
 
 const selling_chart = new Chart(selling_ctx, {
   type: "bubble",
   data: selling_chart_data,
-  options: {},
+  options: {
+    scales: {
+      y: {
+        grid: {
+          color: "rgba(0, 0, 0, 0.2)",
+        },
+        title: {
+          display: true,
+          text: "Average Dwell Time (Sec.)",
+          font: {
+            size: 15,
+          },
+        },
+      },
+      x: {
+        grid: {
+          color: "rgba(0, 0, 0, 0.2)",
+        },
+        title: {
+          display: true,
+          text: "Average Consideration Time (Sec.)",
+          font: {
+            size: 15,
+          },
+        },
+      },
+    },
+  },
 });
 
 // console.log(selling_datasets);

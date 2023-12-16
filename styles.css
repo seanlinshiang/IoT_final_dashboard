@@ -2,8 +2,11 @@
   margin: 5em auto 5em auto;
 }
 body {
-  background-image: url("./background.jpg");
+  background-size: contain;
+  background-image: url("store.jpg");
   background-position: center;
+  /* font-family: "Annai MN"; */
+  font-family: "DIN Alternate";
 }
 div.for_container {
   display: flex;
@@ -12,24 +15,40 @@ div.for_container {
 }
 div.container {
   background-color: white;
-  opacity: 0.97;
-  border-radius: 20px;
-  padding: 0x;
+  opacity: 0.96;
+  border-radius: 12px;
   margin: 50px;
 }
 
 div.container h1 {
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
+  font-weight: bolder;
 }
 
-body.div.nav.a {
-  text-align: center;
-  font-size: 30px;
+.navbar-brand {
+  font-size: 25px;
 }
 
 div.coke {
   margin: 50px;
+  padding: 50px;
+  border-radius: 12px;
   background-color: white;
   text-align: center;
+  opacity: 0.97;
+}
+
+.coke_chart {
+  padding: 30px;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-image: url(convenience-store.png);
+  margin: 10px;
 }
