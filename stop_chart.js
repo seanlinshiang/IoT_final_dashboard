@@ -4,7 +4,7 @@ const stop_labels = [];
 const stop_data = [];
 products_data.forEach((e) => {
   stop_labels.push(e.name);
-  stop_data.push(e.average_stop_time);
+  stop_data.push(e.accum_stop_time);
 });
 
 // // 建立包含標籤、資料、背景顏色和邊框顏色的物件陣列
@@ -66,7 +66,7 @@ const stop_chart = new Chart(stop_ctx, stop_config);
 
 // update stop_chart
 function get_stop() {
-  stop_data[0] = products_data[0].average_stop_time;
+  stop_data[0] = products_data[0].accum_stop_time;
   stop_chart.update();
 }
 

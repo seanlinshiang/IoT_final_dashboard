@@ -29,6 +29,8 @@ function get_data() {
       products_data[0].average_purchase_time = result.average_purchase_time;
       products_data[0].accum_stop_time = result.accum_stop_time;
       products_data[0].sold_num = result.sold_num;
+      products_data[0].consideration_num = result.consideration_num;
+      products_data[0].purchase_rate = result.purchase_rate;
       // console.log(result.message);
     })
     .catch((error) => console.log("error", error));
