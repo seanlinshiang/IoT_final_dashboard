@@ -39,8 +39,8 @@ const coke_chart = new Chart(coke_ctx, {
       x: {
         title: {
           display: true,
-          text: "Time (Sec.)",
-          align: "end",
+          text: "Time",
+          align: "center",
           font: {
             size: 20,
             weight: "bold",
